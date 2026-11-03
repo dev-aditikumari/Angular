@@ -1,0 +1,268 @@
+******** What is  Angular*******
+
+Developed by google.
+Javascript framework for web development. 
+Singl Page Application(No Refresh on clicks).
+
+
+
+
+********Important Points*************
+Need to install Node
+Need code editor
+MVC Architecture 
+Angular js and Angular are different 
+Angular release on 14-Sep-2016
+Current version is 22
+
+
+********Why Angular***********
+Complete framework
+Fast loading
+Fast development
+Suitable for Large and Complete Apps
+Large community
+update in every 6 months
+
+
+**********Angular 22 Setup**********
+Install Node
+Install Code Editor
+Create Angular App
+Make first change
+Update Angular CLI Version
+
+
+********* Hello Angular 22***********
+Are we using Angular 22?-> check package.json and see everything have 22 version or not
+Make first HTML page
+Make first TS page
+Make first CSS code
+Make new properties(Variables)
+
+
+![alt text](image.png)
+inside  Angular ts and html part are in different file unlike react where both of them are in same file.
+and we can get typescript data using {{}};
+
+![alt text](image-1.png) by changing templateUrl in app.ts we can change html page in Angular.but not recommended.Typescript helps us to determine earlier our data in of which type and now of which type and if we get any change to type it will show error.
+
+
+*******File & Folder Structure***********
+Important files for Angular Project
+->Package.json -> meta data of projects are here , libraries , dependencies -> important for project, dev dependencies-> important for development of project eg typescript , version , run command ,
+
+browser never read typescript it always read javascript when typescript is converted into javascript.
+
+
+-> tsconfig.json:- configuration of typescript eg target :- which js ecma script we are targetting , strictly check , error show
+-> tscongig.app.json:- it store inner app folder configuration  while whole project typescript configuration is inside tsconfig.json , which folder will be excluded or included or where it's output will be
+->tsconfig.spec.json:- spec means test case , two type of testing one by tester and one done by developers as well so angular care about this and we can write testcases here
+->app.spec.ts :- for testcase again
+->README.md -> documentation of project contains , all the info about the project we can change or add project documentation here
+->package-lock.json-> we are not suppose to do any task in this file manually it will decided which version of dependency will be stored
+^21.0.0 -> minimum version , for same version 21.0.0
+->angular.json ->store angular configuration inside it  , where is our main file , assetes , where is typescript configuration , where is main css file , number of build all the cofiguration of project is here , root , source root
+-> node modules -> foldere created on the basis of dependencies and dev dependencies in package,json.it is everywhere in react , vue, nodejs
+
+
+-> public folder -> public  file eg ,extra css , js , images , icon which are not that much privacy or security thing are store here
+-> src folder-> project code which we write ourself is present here 
+-> app component -> component of app code 
+our project have 2 entrypoint one for html and another one for js
+
+-> index.html -> html entry point , first html file run is this only.
+->main.ts -> JS entry point.first ts file run is
+-> style.css -> common/global css file
+-> app.config.ts -> configuration of everything in app folder
+-> app.css , app.html , app.routes.ts -.routes of all the file , app.ts
+-> git -. we deploy our code on git
+->gitignore -> giles inside it will not go on git
+-..vscode-> code edition setting , extension etc...
+=>.editconfig-> code formatting , then space , font size , new line how weill be written here
+->.angular -> store info about cache , build time and try to make it fast.
+
+Files which not related to Angular
+Enter Points
+Config File
+Code Flow
+Folder uses
+Common mistake by developers
+
+
+**********Angular Interpolation************
+What is Interpolation
+-> Display data from TS to HTML file.
+-> whenever we make any component in angular logic is in app.ts and data is written in app.html.
+{{name}}
+->interpolation
+when anything is inside {{}} it will check whether it is present in app.ts or not as a property if it is not then it will shtart doing its calculation as js but even if that is also not it will give error
+
+<h1>{{10+23+45}} </h1> -> correct
+<h1>{{name = 20;}} </h1> -> wrong
+<h1>{{getName()}}</h1>
+
+app.ts  getName(a: number , b: number){ // whenever we use any parameter in typescript we have to //declare ther type
+    return this.name;
+}
+if we are making any function inside an class and we want to use any var made in class then we have to use this.var_name;
+
+->One wy data binding - from component to template.
+app.ts-> app.html => correct  app.html -> app.ts => cant send therefore one way data binding.
+->Angular automatically updates the view  whenever the value in the components changes.{{34+224+24}}
+->You can use expressions, but avoid complex logic or side-effects inside interpolation
+->Safe from Cross-Site Scripting (XSS)(it can misuse data , can damage security issue) as Angular automatically sanitizes the output
+->No complex calculations or heavy functions-- do those in the component
+
+we can use html in app.ts in template:`<h1> Inline template {{name}}</h1>`
+we can use  interpolation in Inline template also.
+
+
+
+********Angular CLI and Compinent**********
+Angular CLI-> Command Line Interface -> if we dont  use Angular CLI in our project then we cant make component easy , cant make build or run our project.it is  too that helps to developers to create , build , test and deploy Angular applications.
+
+Commands that help us to develop Angular Application
+.Can make new app
+.Run app
+.Make component
+.Make , oath , pipeline , unit testing
+.Make build
+
+to install Angular CLI ->npm i -g @angular/cli
+to make component -> ng generate component Login or ng g c Signup
+to make service  -> ng generate service loginService
+to make sevice ->ng generate service loginService/auth
+to make pipe -. ng generate pipe UIPipes
+to run - ng serve
+
+
+*************Components in Angular***********
+Part of application.Inside one component there can be more components.
+eg:- Header , Footer , Profile , Login , Signup , ProductList
+we can reuse components in multiple places.
+
+
+Types of component
+Root component:- One application can have only one root component in angular it is App all components are inside it
+
+Feature component :- Components of different features eg: - login , signup and we use them in multiple places
+
+Shared component:- When one component is used in mltiple places
+
+standalone component:- we dont need to register component we make one component and then can use any where 
+
+Dumb component:-those component which have only UI with no logic.
+
+Smart component:-Component with logic
+
+commands for making component
+ng generate component component_name
+one component can have 4 parts
+.css, .html , .spec.ts , .ts
+
+for using component copy selector from ts file of that component  and then where we want to use it go there
+<selector></selector> and then go ts file of parent component where we want to use it and then in import add it .
+
+
+
+********Event Binding | Click Event************
+Event Binding :- It is a way to listen to events triggered in HTML template and call a function written it 
+the component .ts file.
+different events are click , change , input  
+
+
+*********Inportant events in Angular********
+Event with input field 
+Events with dropdown
+Events with div
+Mouse events
+Call function on events
+Find event name
+
+
+***********Data types in angular*******
+why we need data types
+define type  for property or variable 
+eg data type of name is string 
+
+name: string = "Hon"
+typescript automatically detects types of data
+
+to provide multiple data type 
+multipleData : number | string = 56;
+ multipleData2 : any = "Hello";
+
+
+
+
+different types for event are Event , PointerEvent , MouseEvent
+
+
+************Property binding in Angular*********
+It binds componemt data to DOM. binds component data to html element properties.
+<input [value]="username">
+with properties we should use property binding but with var we use interpolation. for properties alots of time boolean value doesnt work
+therefor we should use property binding
+
+use Interpolation :- when you want to display data as text.
+inside HTML content
+One way component view
+
+use Property binding:- when we want to bind to an HTML element Property
+for dynamic values , boolean, objects
+
+
+***********Signals*********
+Signal is a wrapper around a value.It give a signal when value changes.
+count = signal(10);
+count = 10;
+it will show in both ui ans ts file that a var is changed unlike without signal which show only on ui.
+
+
+********Type of Signals**********
+A writable signal is a signal whose value we can change
+A computed signal is a read-only signal , Derived Signals
+Effect signal: Runs side effect when signals change
+
+Signals Vs Normal properties
+
+Reactivity              Reactive(Angular tracks changes)        Not Reactive
+UI Update               Auto update UI when value change        Depends on change detection
+Change detection        Fine-grained only affected parts        Full component check
+Syntax                  count()                                 count
+Update                  set()/update()                          Direct assignment
+Performance             Faster,optimized                        Slower for large Apps
+
+signals are faster that state in react.
+
+************Computed Signals***********
+
+computed signals cant be directly updated.
+if any update happen signal give update regarding it.nd then effect can happen on that basis.
+
+
+*************Effects in Angular*************
+used in constructor . If any signal is inside that effect then if signal update effect will also call.
+avoid  updating signal in effect.
+
+*************Data Type with Signals***********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
