@@ -1,0 +1,64 @@
+<h1>Hello Angular 22</h1>
+<h1>{{title()}}</h1>
+<h2>{{age}}</h2>
+<app-profile></app-profile>
+<button (click)="callMe()">click</button>
+<button (click)="counter('plus')">+</button>
+<span>{{countNow}}</span>
+<button (click)="counter('minus')">-</button>
+
+<input type="text" (change)="handleEvent($event)"/>
+<input type="text" (input)="handleEvent($event)"/>
+<button (click)="handleEvent($event)">Click</button>
+<select name = " " (change)="handleEvent($event)">
+    <option value="1">One</option>
+    <option value="2">Two</option>  
+    <option value="3">Three</option>
+
+</select>
+
+<!-- <input type="text" (blur)="handleEvent($event)"/> when you click outside the input box, it will trigger the blur event -->
+<input type="text" (blur)="handleEvent($event)"/>
+<input type="text" (focus)="handleEvent($event)"/> <!-- when you click inside the input box, it will trigger the focus event -->
+
+<div  (mouseenter)="handleEvent($event)" (mouseleave)="handleEvent($event)">
+    <h1>Hover over me</h1>
+</div>
+
+<button (click)="updateData('Hello Angular')">Update Data</button>
+<div>{{data}}</div>
+<div>{{sum(5, 6)}}</div>
+
+
+<h1>Property Binding</h1>
+<button disabled="{{btnDisable}}">Click Me</button>
+<button [disabled]="btnDisable">Click Me</button>
+<button (click)="toggleBtn()">Toggle Button</button>
+
+<input type="text" readonly="{{isReadOnly}}"/>
+<input type="text" [readonly]="isReadOnly"/>
+<img src="{{imgUrl}}"/>
+<img [src]="imgUrl"/>   
+<button (click)="updateDatas()">Update Data</button>
+
+<h2>Signal Example</h2>
+<div>{{count()}}</div>
+
+
+
+<h1>Computed signal</h1>
+<div>{{area}}</div>
+<div>{{height}}</div>
+
+<button (click)="handleHeight()">Change Height</button>
+
+<div>{{computedArea()}}</div>
+<div>{{computedHeight()}}</div>
+<button (click)="handleComputedHeight()">Change Computed Height</button>
+
+
+
+<h1>Effect Example</h1>
+<h1  style.color ="{{color}}">Speed : {{speed()}}</h1 >
+<button (click)="updateSpeed()">Update Speed</button>
+
